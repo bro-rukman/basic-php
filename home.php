@@ -4,6 +4,7 @@ include('validation.php');
 <html>
 
 <head>
+    <title>Home</title>
     <style>
         h1 {
             text-align: center;
@@ -55,7 +56,7 @@ include('validation.php');
             <a href="krs.php">KRS</a>
         </li>
         <li>
-            <a href="dosen.php">Dosen</a>
+            <a href="./dosen/index.php">Dosen</a>
         </li>
     </ul>
     <p>

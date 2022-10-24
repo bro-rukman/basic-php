@@ -2,6 +2,7 @@
 include("class_matkul.php");
 $matkul = new class_matkul;
 $data_all = $matkul->getAllMatkul();
+$header = array("No", "Kode Matkul", "Mata Kuliah", "SKS", "Aksi");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -15,16 +16,16 @@ $data_all = $matkul->getAllMatkul();
 
 <body>
     <h1>Matkul</h1>
-    <p><a href="tambah.php">Tambah Data</a></p>
+    <p><a href="tambah.php"><button>Tambah Data</button></a></p>
     <div>
         <table border="1px">
             <thead>
                 <tr>
-                    <th>No</th>
-                    <th>Kode Mata kuliah</th>
-                    <th>Mata Kuliah</th>
-                    <th>SKS</th>
-                    <th>Aksi</th>
+                    <?php
+                    foreach ($header as $key) { ?>
+                        <th><?php echo $key; ?></th>
+                    <?php }
+                    ?>
                 </tr>
             </thead>
             <tbody>
@@ -37,7 +38,7 @@ $data_all = $matkul->getAllMatkul();
                         <td><?php echo $rec['kd_matkul']; ?></td>
                         <td><?php echo $rec['nama']; ?></td>
                         <td><?php echo $rec['sks']; ?></td>
-                        <td><a href="edit.php?kd_matkul=<?php echo $rec['kd_matkul'] ?>">Edit</a>|| <a href="hapus.php?kd_matkul=<?php echo $rec['kd_matkul'] ?>">Delete</a></td>
+                        <td><a href="edit.php?kd_matkul=<?php echo $rec['kd_matkul'] ?>">Edit</a> || <a href="hapus.php?kd_matkul=<?php echo $rec['kd_matkul'] ?>">Delete</a></td>
                     </tr>
                 <?php
                 }
